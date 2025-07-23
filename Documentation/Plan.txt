@@ -1,0 +1,100 @@
+Assignment: Build the Interactive VeeOS Desktop (Single-Page Web App)
+
+Course: Web Development – Frontend Foundations  
+Assignment Title: VeeOS Interactive Desktop Simulation  
+Due Date: Whenever you're ready 😎
+
+============================================================
+OBJECTIVE
+------------------------------------------------------------
+Create a single-page interactive website that looks and feels like a mock operating system. 
+You will design a static "desktop" and simulate file/folder/app interaction 
+without leaving the index.html page, using HTML, CSS, and JavaScript.
+ 
+============================================================
+PROJECT FOLDER STRUCTURE
+------------------------------------------------------------
+veeOS/
+├── index.html
+├── style.css
+├── script.js
+├── /images/
+├── /apps/
+│   ├── game1.html
+│   ├── terminal.html
+│   ├── browser.html
+│   └── files/
+│       ├── about.txt
+│       └── poem.md
+├── /data/
+│   └── fileIndex.json   ← (if you want to simulate file systems)
+============================================================
+REQUIREMENTS
+------------------------------------------------------------
+HTML:
+- Create a div for the desktop with a background image
+- Position “shortcuts” (icons) using semantic containers
+- Include a taskbar with:
+  - Start/Menu button (styled as in your mockup)
+  - Optional: Clock or fake system tray
+  - Optional: App names when "opened"
+
+CSS:
+- Desktop background image
+- Icons styled and aligned grid-style
+- Taskbar fixed to the bottom
+- Hover effects for icons (bonus: tooltip-style filenames)
+
+JavaScript:
+- Clicking an icon opens a window (div/modal) within the same page
+- Simulate window dragging and minimize/close actions
+- Only one index.html page—no full reloads allowed
+- Apps/content are:
+  - Either pre-written HTML and injected into a container
+  - Or built as elements dynamically
+
+============================================================
+BEHAVIOR GOALS
+------------------------------------------------------------
+Action               | Behavior
+---------------------|----------------------------------------------
+Click folder         | Opens a modal showing "contents"
+Click terminal       | Opens a fake terminal interface (non-functional)
+Click browser        | Shows a simulated web viewer window
+Click file           | Opens dummy text viewer
+Click game icon      | Displays embedded placeholder or game
+Click taskbar icon   | Brings app window to front / minimize / close
+
+============================================================
+BONUS CHALLENGES
+------------------------------------------------------------
+[ ] Add window dragging (hint: mousedown, mousemove, mouseup)
+[ ] Add simple animations for opening/closing apps
+[ ] Add a boot animation or fake loading screen
+[ ] Make the "Menu" button open a mock menu
+[ ] Save open windows in localStorage
+[ ] Add dark/light mode toggle
+
+============================================================
+TESTING EXPECTATIONS
+------------------------------------------------------------
+✔️ Desktop loads with all icons in place  
+✔️ Clicking icons opens corresponding fake app windows  
+✔️ No page reloads or navigations occur  
+✔️ Optional: Mobile/tablet version is usable or fixed
+
+============================================================
+DEPLOYMENT
+------------------------------------------------------------
+1. Push your code to a GitHub repository
+2. Go to Settings > Pages and publish your `main` branch
+3. Your site will be available at:
+   https://yourusername.github.io/veeOS/
+
+============================================================
+
+Need help? Ask for:
+- Sample icons or resources
+- Starter HTML/CSS window component
+- Game/app ideas
+- A UI/UX checklist for usability

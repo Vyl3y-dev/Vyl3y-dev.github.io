@@ -1,0 +1,52 @@
+HTML
+====================================================
+<div id="terminalApp" class="app-window" style="display: none;">
+  <div class="title-bar">Terminal <button class="close">x</button></div>
+  <div class="app-content">
+    <pre>> Welcome to VeeShell</pre>
+    <input type="text" id="terminalInput">
+  </div>
+</div>
+====================================================
+JS
+====================================================
+document.getElementById("terminalInput").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    const cmd = e.target.value.toLowerCase();
+    let output = "";
+    switch (cmd) {
+      case "help":
+        output = "> commands: help, clear, about";
+        break;
+      case "about":
+        output = "> VeeOS v1.0 – handcrafted just for you";
+        break;
+      case "clear":
+        document.querySelector(".app-content").innerHTML = "";
+        return;
+      default:
+        output = "> command not found";
+    }
+    const pre = document.createElement("pre");
+    pre.textContent = output;
+    e.target.parentNode.insertBefore(pre, e.target);
+    e.target.value = "";
+  }
+});
+====================================================
+FolderLayout
+====================================================
+veeOS/
+├── index.html
+├── style.css
+├── script.js
+├── /images/
+├── /apps/
+│   ├── game1.html
+│   ├── terminal.html
+│   ├── browser.html
+│   └── files/
+│       ├── about.txt
+│       └── poem.md
+├── /data/
+│   └── fileIndex.json   ← (if you want to simulate file systems)

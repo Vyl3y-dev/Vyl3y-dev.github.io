@@ -1,0 +1,284 @@
+=========================
+🌐 HTML CHEAT SHEET
+=========================
+<!DOCTYPE html>         → Declares the HTML version
+<html lang="en">        → Root element
+<head>...</head>        → Metadata, stylesheets, titles
+<body>...</body>        → Visible content
+
+Common Tags:
+-------------
+<div>...</div>          → Generic container
+<span>...</span>        → Inline container
+<h1> to <h6>            → Headings
+<p>...</p>              → Paragraph
+<a href="...">          → Link
+<img src="..." />       → Image
+<ul><li>...</li></ul>   → List
+<button>Click</button>  → Button 
+<input type="text">     → Input field
+<script src="...">      → Include JS file
+<link rel="stylesheet"> → Include CSS file
+
+Attributes:
+-------------
+id="..."                → Unique identifier
+class="..."             → CSS/JS grouping
+src="..."               → Source (for img/script)
+href="..."              → Link reference
+alt="..."               → Alt text for images
+
+=========================
+🎨 CSS CHEAT SHEET
+=========================
+Selector Types:
+-------------
+.element        → Select by class
+#id             → Select by ID
+tag             → Select by element type (e.g., div, p)
+*               → Select everything
+
+Positioning:
+-------------
+position: static | relative | absolute | fixed;
+top / bottom / left / right
+z-index: number;
+
+Display:
+-------------
+display: block | inline | inline-block | flex | grid | none;
+visibility: visible | hidden;
+
+Styling:
+-------------
+background-color: #hex / name;
+color: #hex;
+font-family: 'Arial', sans-serif;
+font-size: 16px;
+text-align: center / left / right;
+margin / padding: 10px;
+border: 1px solid black;
+box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+Transitions:
+-------------
+transition: all 0.3s ease;
+
+Hover Effects:
+-------------
+.element:hover {
+  transform: scale(1.1);
+}
+
+Flexbox Basics:
+-------------
+display: flex;
+justify-content: center / space-between;
+align-items: center;
+
+Responsive:
+-------------
+@media (max-width: 768px) {
+  /* Mobile styles */
+}
+
+=========================
+⚙️ JS CHEAT SHEET
+=========================
+Linking:
+-------------
+<script src="script.js"></script>
+
+Variables:
+-------------
+let name = "Vee";
+const pi = 3.14;
+
+Functions:
+-------------
+function sayHi() {
+  console.log("Hello!");
+}
+
+Events:
+-------------
+element.addEventListener("click", function() {
+  // do something
+});
+
+Get Elements:
+-------------
+document.getElementById("id");
+document.querySelector(".class");
+
+Change Content / Style:
+-------------
+element.innerText = "Hello";
+element.style.display = "none";
+
+Create Elements:
+-------------
+let div = document.createElement("div");
+div.className = "window";
+document.body.appendChild(div);
+
+Basic Modal Logic:
+-------------
+document.querySelector("#icon").addEventListener("click", function() {
+  document.querySelector("#appWindow").style.display = "block";
+});
+
+Draggable Window (Simplified):
+-------------
+let el = document.getElementById("window");
+let offsetX, offsetY, isDragging = false;
+
+el.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  offsetX = e.offsetX;
+  offsetY = e.offsetY;
+});
+
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    el.style.left = e.pageX - offsetX + "px";
+    el.style.top = e.pageY - offsetY + "px";
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+=========================
+🧰 FILE TIPS
+=========================
+index.html           → Main file
+style.css            → Linked in <head> for styling
+script.js            → Linked before </body> for interaction
+
+/images/             → Folder for icons, backgrounds, etc.
+/apps/               → Optional files with dummy content to inject
+
+=========================
+🚀 GITHUB DEPLOYMENT
+=========================
+1. Push your repo to GitHub 
+2. Go to "Settings" > "Pages"
+3. Choose branch: main, folder: root
+4. Click Save — done!
+
+=========================
+📝 DEBUGGING TIPS
+=========================
+- Use browser DevTools (F12) to inspect layout and console
+- Check file paths and spelling
+- Use console.log() often to check flow
+- Style won’t apply? Make sure CSS is linked and selectors are correct
+
+=========================
+🎁 RECOMMENDED EXTRAS
+=========================
+- Google Fonts (fonts.google.com)
+- FontAwesome for icons (cdnjs or kits)
+- Coolors.co for color schemes
+- JS libraries for animations (like GSAP, Anime.js)
+====================================================
+
+
+=========================
+📦 JSON CHEAT SHEET
+=========================
+
+🌟 WHAT IS JSON?
+------------------------------------------------------------
+JSON (JavaScript Object Notation) is a lightweight data format
+used to store and transport data, often between frontend & backend.
+
+It’s just a text file with a `.json` extension.
+
+Used in:
+- Config files
+- File trees or app content
+- Simulating a fake file system or OS state
+
+------------------------------------------------------------
+🧱 BASIC STRUCTURE
+------------------------------------------------------------
+{
+  "key": "value",
+  "number": 42,
+  "isActive": true,
+  "items": ["file1.txt", "file2.txt"],
+  "nested": {
+    "folder": "Documents"
+  }
+}
+
+------------------------------------------------------------
+📌 RULES
+------------------------------------------------------------
+- Keys must be in **double quotes**
+- Strings must be in **double quotes**
+- No comments allowed
+- Cannot have trailing commas
+
+------------------------------------------------------------
+🧰 DATA TYPES
+------------------------------------------------------------
+String     → "hello"
+Number     → 123
+Boolean    → true / false
+Array      → ["a", "b", "c"]
+Object     → {"key": "value"}
+Null       → null
+
+------------------------------------------------------------
+📂 EXAMPLE: FILE TREE DATA
+------------------------------------------------------------
+{
+  "Documents": {
+    "files": ["resume.txt", "letter.md"]
+  },
+  "Games": {
+    "files": ["clicker.js", "puzzle.html"]
+  },
+  "System": {
+    "files": ["readme.md", "settings.cfg"]
+  }
+}
+
+------------------------------------------------------------
+🔍 PARSING JSON IN JAVASCRIPT
+------------------------------------------------------------
+// Convert JSON string → JS object
+let obj = JSON.parse(jsonString);
+
+// Convert JS object → JSON string
+let str = JSON.stringify(obj, null, 2); // Pretty print
+
+------------------------------------------------------------
+📁 FETCH JSON FILE (LOCAL)
+------------------------------------------------------------
+fetch('data/fileIndex.json')
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+  });
+
+------------------------------------------------------------
+🧠 COMMON MISTAKES TO AVOID
+------------------------------------------------------------
+- Forgetting double quotes around keys
+- Adding comments (not allowed)
+- Using single quotes (use " instead)
+- Trailing commas after last item
+
+------------------------------------------------------------
+💡 TIPS
+------------------------------------------------------------
+- Use JSON to simulate app content or file systems
+- You can define a virtual desktop layout in JSON
+- Keep small JSON files per "folder" if simulating a real OS
+
+``
