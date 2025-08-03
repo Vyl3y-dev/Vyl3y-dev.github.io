@@ -1,4 +1,42 @@
 =========================
+💬 COMMENTS CHEAT SHEET
+=========================
+
+🟦 HTML Comments
+------------------------------------------------------------
+<!-- This is an HTML comment -->
+<!-- Comments will not be visible in the browser -->
+
+🟩 CSS Comments
+------------------------------------------------------------
+/* This is a CSS comment */
+/* Can span multiple lines */
+
+🟨 JavaScript Comments
+------------------------------------------------------------
+// This is a single-line comment
+
+/*
+This is a
+multi-line comment
+*/
+
+🟥 JSON Comments (⚠️ NOT ALLOWED)
+------------------------------------------------------------
+❌ JSON does not support comments
+
+// This is INVALID in JSON
+/*
+Also INVALID in JSON
+*/
+
+✅ Tip: If you need notes in JSON, use a fake key:
+{
+  "_comment": "This is just a note for the developer"
+}
+============================================================
+
+=========================
 🌐 HTML CHEAT SHEET
 =========================
 <!DOCTYPE html>         → Declares the HTML version
