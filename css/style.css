@@ -2,13 +2,15 @@ body {
     font-family: sans-serif;
     color: #eee;
     text-align: center;
-    background-color: #111;
+    background-color: #1a1a1a;
+    border: 5px solid #111;
 }
 
 div#inner_monitor {
     background-color: #1f88ff;
     border: 7.5px, #042d42;
     border-style: outset outset inset inset;
+    position: relative;
     aspect-ratio: 16/8;
 }
 
@@ -27,4 +29,15 @@ div#power_button {
     margin-top: 16.5px;
     margin-right: 33px;
     float: right;
+}
+
+div#taskbar {
+position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background-color: #001e8b;
+  color: white;
+  z-index: 10;
 }
