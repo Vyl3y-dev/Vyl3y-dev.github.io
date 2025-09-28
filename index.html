@@ -12,10 +12,30 @@
     <!-- <p>Nice :D</p> -->
      <div id="outer_monitor">
     <div id="inner_monitor">
+        <div id="desktop_area">
+            <!-- icons and windows go here -->
+             <div class="desktop-icon" data-app="terminalApp">
+                <img class="icon-img" src="assets/images/Terminal_Icon.png" alt="Terminal App"/>
+                <h6>Terminal</h6>
+             </div>
+            </div>
         <div id="taskbar">
+            <div class="startmenu" id="startmenu_button"><strong><em>START</em>🌠</strong></div>
         </div>
     </div></div>
-    <div id="power_button">
+    <div id="power_button">POWER  
     </div>
+
+    <div class="app-window" id="terminalApp">
+  <div class="title-bar">
+    <span>Terminal</span>
+    <button class="close-btn">X</button>
+  </div>
+  <div class="window-content">
+    <p>> Welcome to VeeShell</p>
+    <label for="terminalInput" class="visually-hidden">Terminal Input</label>
+<input type="text" id="terminalInput" aria-label="Terminal Input" />
+  </div>
+</div>
 </body>
 </html>

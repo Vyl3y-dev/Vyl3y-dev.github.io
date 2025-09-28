@@ -10,14 +10,16 @@ div#inner_monitor {
     background-color: #1f88ff;
     border: 7.5px, #042d42;
     border-style: outset outset inset inset;
-    position: relative;
     aspect-ratio: 16/8;
+    display: flex;
+  flex-direction: column;
 }
 
 div#outer_monitor {
     background-color: #042d4200;
     border: 7.5px, #8a8a8a;
     border-style: ridge ridge groove groove;
+    position: relative;
 
 }
 
@@ -25,19 +27,58 @@ div#power_button {
     background-color: rgb(35, 35, 37);
     border: 5px, outset, rgb(35, 35, 37);
     width: 75px;
-    height: 25px;
-    margin-top: 16.5px;
+    height: 20px;
+    margin-top: 20px;
     margin-right: 33px;
     float: right;
+    text-align: center;
 }
 
 div#taskbar {
-position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 35px;
+  width: 16/8;
+  height: 40px;
   background-color: #001e8b;
+  border: 1px solid #001e8a;
   color: white;
   z-index: 10;
+}
+
+div#startmenu_button {
+    border: 2px #001e8b;
+    background-color: #0330d3;
+    border-style: ridge ridge groove groove;
+    width: 75px;
+    height: 25px;
+    text-align: center;
+    margin-top: 7px;
+    margin-left: 3px;
+}
+
+div#desktop_area {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+img.icon-img {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    float: left;
+}
+
+div.desktop-icon {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+div.app-window {
+    display: none;
+    position: absolute;
+    border: 3px solid #001e8c;
+    box-shadow: #111;
+
 }
