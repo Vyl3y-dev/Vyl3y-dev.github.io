@@ -1,60 +1,145 @@
+/* style.css - ONLY THE RELEVANT UPDATES for .desktop-icon grid layout */
+
 body {
-  margin: 0;
+  margin: 0px;
+}
+
+.system-container {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: auto;
   height: 100vh;
-  background-image: url('images/wallpaper.jpg');
-  background-size: cover;
-  background-position: center;
-  font-family: sans-serif;
 }
 
-#topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 32px;
-  width: 100%;
-  background-color: #111;
+/* Header and related properties */
+#header {
+  background-color: black;
+  flex: 5%;
+}
+
+.system-information {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50%;
+}
+
+.system-information > div {
+  text-align: center;
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 16px;
-  z-index: 9999;
-  font-size: 14px;
+  box-sizing: border-box;
 }
 
-#desktop {
-  position: absolute;
-  top: 32px;
-  bottom: 60px; /* space for dock */
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-
-#dock {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 50px;
-  background-color: rgba(0,0,0,0.6);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-  gap: 10px;
-  z-index: 9999;
-}
-
-.dock-icon {
-  width: 36px;
-  height: 36px;
+#top-bar > div {
   border-radius: 8px;
-  transition: transform 0.2s ease;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.dock-icon:hover {
-  transform: scale(1.2);
+p.info {
+  margin: 0px;
+}
+
+div#top-bar.system-information {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#date {
+  margin-right: 2%;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#time {
+  margin-right: 5%;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#notifications {
+  margin-left: 50%;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#alerts {
+  margin-left: 2%;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#volume {
+  margin-left: 2%;
+  padding:  5px;
+  border: 1px solid transparent;
+}
+
+#battery {
+  margin-left: 2%;
+  margin-right: auto;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#date:hover, #time:hover, #notifications:hover, #alerts:hover, #volume:hover, #battery:hover {
+  border: 1px solid rgb(65, 65, 65);
+  background-color: rgb(238, 234, 234);
+  color: black;
+  transform: scale(1.05)
+}
+
+/* Main Desktop Apps and related properties */
+
+#main-desktop {
+  background-color: cyan;
+  flex: 85%;
+  display: grid;
+  grid-template-rows: repeat(3, 150px);
+  grid-template-columns: repeat(3, 150px);
+  gap: 24px;
+  padding: 40px 20px 20px;
+  justify-items: center;
+  align-items: start;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+
+.desktop-icon:hover {
+  transform: scale(1.05);
+}
+
+
+.desktop-icon img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+}
+
+
+.desktop-icon span {
+  font-size: 14px;
+  color: black;
+}
+
+/* Footer and related properties */
+
+#footer {
+  background-color: black;
+  flex: 10%;
 }

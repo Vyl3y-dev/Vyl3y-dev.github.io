@@ -1,30 +1,76 @@
+<!-- REFACTORED VeeOS HTML + CSS to restore .desktop-icon system -->
+<!-- This file replaces repetitive #app-one to #app-six with clean, reusable classes -->
+
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <script src="js/script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeeOS Desktop</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- <h1>Programmer Hubby, it works!</h1> -->
+  <!-- <h1>Programmer Hubby, it works!</h1> -->
     <!-- <p>Nice :D</p> -->
-     <body>
-  <div id="topbar">      
-    <!-- Time, battery, settings -->
+  <div class="system-container">
+    <div id="header">
+      <div id="top-bar" class="system-information">
+        <div id="date"><p class="info">Oct 10 2025</p></div>
+        <div id="time"><p class="info">12:00 AM</p></div>
+        <div id="notifications"><p class="info">🔔</p></div>
+        <div id="alerts"><p class="info">❗</p></div>
+        <div id="volume"><p class="info">🔊</p></div>
+        <div id="battery"><p class="info">🔋</p></div>
+      </div>
+    </div>
+
+    <div id="main-desktop">
+      <div class="desktop-icon" data-app="terminal">
+        <img src="icons/terminal.png" alt="Terminal">
+        <span>Terminal</span>
+      </div>
+      <div class="desktop-icon" data-app="portfolio">
+        <img src="icons/folder.png" alt="Portfolio">
+        <span>Portfolio</span>
+      </div>
+      <div class="desktop-icon" data-app="resume">
+        <img src="icons/file.png" alt="Resume">
+        <span>Resume</span>
+      </div>
+      <div class="desktop-icon" data-app="music">
+        <img src="icons/music.png" alt="Music">
+        <span>Music</span>
+      </div>
+      <div class="desktop-icon" data-app="settings">
+        <img src="icons/settings.png" alt="Settings">
+        <span>Settings</span>
+      </div>
+      <div class="desktop-icon" data-app="about">
+        <img src="icons/info.png" alt="About">
+        <span>About</span>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="bottom-bar" class="taskbar">
+        <div class="taskbar-app"></div>
+        <div class="taskbar-app"></div>
+        <div class="taskbar-app"></div>
+        <div class="taskbar-app"></div>
+      </div>
+    </div>
   </div>
 
-  <div id="desktop">
-    <!-- Background + space for icons or windows -->
+  <div class="app-window" id="terminal-app" data-app="terminal" style="display: none;">
+  <div class="title-bar">
+    <span>Terminal</span>
+    <button class="close-btn">X</button>
   </div>
-
-  <div id="dock">
-    <!-- Centered bottom dock with icons -->
-     <img alt="file explore" src="assets/images/FileExploreIcon.png" class="dock-icon" />
+  <div class="app-content">
+    <!-- App-specific content goes here -->
   </div>
-</body>
+</div>
 
-     
 </body>
 </html>
