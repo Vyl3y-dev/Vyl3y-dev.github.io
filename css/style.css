@@ -105,19 +105,19 @@ div#top-bar.system-information {
 }
 
 .desktop-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100px;
   height: 100px;
-  background-color: white;
-  border: 2px solid gray;
-  border-radius: 8px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+ 
 }
+
 
 
 .desktop-icon:hover {
@@ -126,11 +126,17 @@ div#top-bar.system-information {
 
 
 .desktop-icon img {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 4px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or cover if you want full bleed */
+  display: block;
+  
 }
 
+.desktop-icon h3 {
+  padding-top: 0;
+  margin-top: 0;
+}
 
 .desktop-icon span {
   font-size: 14px;
@@ -142,4 +148,9 @@ div#top-bar.system-information {
 #footer {
   background-color: black;
   flex: 10%;
+}
+
+/* App Window and related properties */
+#app-window {
+  display:none;
 }
