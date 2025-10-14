@@ -64,24 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const url = `apps/${appName}.html`;
 
         contentArea.innerHTML = "<p>Loading...</p>";
-        // Load <link> and <script> tags manually after injection
-        const temp = document.createElement("div");
-        temp.innerHTML = html;
 
-        // Load CSS links
-        temp.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
-            const newLink = document.createElement("link");
-            newLink.rel = "stylesheet";
-            newLink.href = "apps/" + link.getAttribute("href");
-            document.head.appendChild(newLink);
-        });
-
-        // Load JS scripts
-        temp.querySelectorAll("script").forEach(script => {
-            const newScript = document.createElement("script");
-            newScript.src = "apps/" + script.getAttribute("src");
-            document.body.appendChild(newScript);
-        });
 
         fetch(url)
             .then(response => {
@@ -90,6 +73,24 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(html => {
                 contentArea.innerHTML = html;
+                // Load <link> and <script> tags manually after injection
+                const temp = document.createElement("div");
+                temp.innerHTML = html;
+
+                // Load CSS links
+                temp.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+                    const newLink = document.createElement("link");
+                    newLink.rel = "stylesheet";
+                    newLink.href = "apps/" + link.getAttribute("href");
+                    document.head.appendChild(newLink);
+                });
+
+                // Load JS scripts
+                temp.querySelectorAll("script").forEach(script => {
+                    const newScript = document.createElement("script");
+                    newScript.src = "apps/" + script.getAttribute("src");
+                    document.body.appendChild(newScript);
+                });
             })
             .catch(error => {
                 console.error(error);
