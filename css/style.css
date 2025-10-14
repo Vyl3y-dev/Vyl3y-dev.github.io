@@ -180,7 +180,7 @@ div#top-bar.system-information {
 /* App Window and related properties */
 .app-window {
   position: absolute;
-  top: 100px;
+  top: 75px;
   left: 100px;
   width: 1000px;
   height: 700px;

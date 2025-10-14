@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (appWindow) {
                 appWindow.style.display = "block";
                 appWindow.classList.add("active"); // optional class
+                // Load the app’s content dynamically
+                loadAppContent(appName);
             }
 
             // 2. Check if taskbar icon already exists
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
         });
+
     });
 
     // 4. Close button logic
@@ -53,6 +56,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    function loadAppContent(appName) {
+        const appWindow = document.getElementById(`${appName}-app`);
+        const contentArea = appWindow.querySelector(".app-content");
+
+        fetch(`apps/${appName}.html`)
+            .then(response => {
+                if (!response.ok) throw new Error(`Failed to load ${appName}`);
+                return response.text();
+            })
+            .then(html => {
+                contentArea.innerHTML = html;
+            })
+            .catch(err => {
+                contentArea.innerHTML = `<p style="color:red;">Error loading ${appName}.</p>`;
+                console.error(err);
+            });
+
+    }
+
     function updateDateTime() {
         const now = new Date();
 
@@ -69,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.getElementById("datetime").textContent = `${date} • ${time}`;
     }
-
     updateDateTime();
     setInterval(updateDateTime, 1000);
+
 });
