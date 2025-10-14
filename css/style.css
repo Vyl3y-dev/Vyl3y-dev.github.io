@@ -196,7 +196,6 @@ div#top-bar.system-information {
 .title-bar {
   background-color: #222;
   color: white;
-  padding: 6px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -213,7 +212,6 @@ div#top-bar.system-information {
 }
 
 .app-content {
-  padding: 12px;
   height: calc(100% - 40px); /* subtract title bar height */
   overflow-y: auto;
 }

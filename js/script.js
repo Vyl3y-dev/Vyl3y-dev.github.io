@@ -73,15 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 temp.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
                     const newLink = document.createElement("link");
                     newLink.rel = "stylesheet";
-                    newLink.href = "apps/" + link.getAttribute("href");
+                    newLink.href = `apps/${link.getAttribute("href").replace(/^apps\//, "")}`;
                     document.head.appendChild(newLink);
                 });
 
                 temp.querySelectorAll("script").forEach(script => {
                     const newScript = document.createElement("script");
-                    newScript.src = "apps/" + script.getAttribute("src");
+                    newScript.src = `apps/${script.getAttribute("src").replace(/^apps\//, "")}`;
+
+                    newScript.onload = () => {
+                        // ✅ Automatically initialize any app with a known init() method
+                        if (window.terminal_box && newScript.src.includes("terminal.js")) {
+                            window.terminal_box.init();
+                        }
+                    };
+
                     document.body.appendChild(newScript);
                 });
+
+
+
+
             });
     }
 
