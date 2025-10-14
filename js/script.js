@@ -60,34 +60,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const appWindow = document.getElementById(`${appName}-app`);
         const contentArea = appWindow.querySelector(".app-content");
 
-        // 🔧 Automatically handle both local and GitHub Pages paths
-        const currentPath = window.location.pathname;
-        let basePath = "";
-
-        // Detect GitHub Pages repo (second path segment)
-        const parts = currentPath.split("/");
-        if (parts[1] && parts[1].includes("veeos")) {
-            basePath = `/${parts[1]}`; // e.g., /veeos.io
-        }
-
-        const url = `${basePath}/apps/${appName}.html`;
+        const url = `apps/${appName}.html`;
 
         contentArea.innerHTML = "<p>Loading...</p>";
 
         fetch(url)
-            .then(res => {
-                if (!res.ok) throw new Error(`Failed to load ${appName}`);
-                return res.text();
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.text();
             })
             .then(html => {
                 contentArea.innerHTML = html;
             })
-            .catch(err => {
-                console.error(err);
+            .catch(error => {
+                console.error(error);
                 contentArea.innerHTML = `
-                    <h3 style="color:red;">Error loading <b>${appName}.html</b></h3>
-                    <p><small>Tried: ${url}</small></p>
-                    `;
+                    <p style="color:red;">Error loading <b>${appName}.html</b></p>
+                    <small>Tried: ${url}</small>
+                `;
             });
     }
 
