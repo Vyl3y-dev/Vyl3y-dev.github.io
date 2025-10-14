@@ -1,4 +1,4 @@
-const terminal = {
+const terminal_box = {
     input: document.getElementById('terminal-input'),
     window: document.getElementById('terminal-window'),
     history: [],
