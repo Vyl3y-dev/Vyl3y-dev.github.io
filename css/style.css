@@ -217,3 +217,7 @@ div#top-bar.system-information {
   height: calc(100% - 40px); /* subtract title bar height */
   overflow-y: auto;
 }
+
+.resume-app {
+  left:75px;
+}
