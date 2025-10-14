@@ -61,23 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const appWindow = document.getElementById(`${appName}-app`);
         const contentArea = appWindow.querySelector(".app-content");
 
-        const url = `apps/${appName}.html`;
-
-        contentArea.innerHTML = "<p>Loading...</p>";
-
-
-        fetch(url)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                return response.text();
-            })
+        fetch(`apps/${appName}.html`)
+            .then(res => res.text())
             .then(html => {
                 contentArea.innerHTML = html;
-                // Load <link> and <script> tags manually after injection
+
+                // 👇 NEW BLOCK
                 const temp = document.createElement("div");
                 temp.innerHTML = html;
 
-                // Load CSS links
                 temp.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
                     const newLink = document.createElement("link");
                     newLink.rel = "stylesheet";
@@ -85,21 +77,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.head.appendChild(newLink);
                 });
 
-                // Load JS scripts
                 temp.querySelectorAll("script").forEach(script => {
                     const newScript = document.createElement("script");
                     newScript.src = "apps/" + script.getAttribute("src");
                     document.body.appendChild(newScript);
                 });
-            })
-            .catch(error => {
-                console.error(error);
-                contentArea.innerHTML = `
-                    <p style="color:red;">Error loading <b>${appName}.html</b></p>
-                    <small>Tried: ${url}</small>
-                `;
             });
     }
+
 
     function makeWindowDraggable(win) {
         const bar = win.querySelector(".title-bar");
