@@ -60,28 +60,33 @@ document.addEventListener("DOMContentLoaded", () => {
         const appWindow = document.getElementById(`${appName}-app`);
         const contentArea = appWindow.querySelector(".app-content");
 
-        // Auto-detect GitHub Pages repo folder
-        const pathParts = window.location.pathname.split("/");
-        const repoName = pathParts[1] || "";
-        const base = repoName ? `/${repoName}` : "";
+        // 🔧 Automatically handle both local and GitHub Pages paths
+        const currentPath = window.location.pathname;
+        let basePath = "";
 
-        const url = `${base}/apps/${appName}.html`;
+        // Detect GitHub Pages repo (second path segment)
+        const parts = currentPath.split("/");
+        if (parts[1] && parts[1].includes("veeos")) {
+            basePath = `/${parts[1]}`; // e.g., /veeos.io
+        }
+
+        const url = `${basePath}/apps/${appName}.html`;
 
         contentArea.innerHTML = "<p>Loading...</p>";
 
         fetch(url)
-            .then(response => {
-                if (!response.ok) throw new Error(`Failed to load ${appName}`);
-                return response.text();
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load ${appName}`);
+                return res.text();
             })
             .then(html => {
                 contentArea.innerHTML = html;
             })
-            .catch(error => {
-                console.error(error);
+            .catch(err => {
+                console.error(err);
                 contentArea.innerHTML = `
-                <p style="color:red;">Error loading <b>${appName}.html</b></p>
-                <small>Tried: ${url}</small>
+                    <h3 style="color:red;">Error loading <b>${appName}.html</b></h3>
+                    <p><small>Tried: ${url}</small></p>
                 `;
             });
     }
