@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 contentArea.innerHTML = `
                     <h3 style="color:red;">Error loading <b>${appName}.html</b></h3>
                     <p><small>Tried: ${url}</small></p>
-                `;
+                    `;
             });
     }
 
