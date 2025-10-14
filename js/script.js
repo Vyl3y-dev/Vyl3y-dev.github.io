@@ -60,7 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const appWindow = document.getElementById(`${appName}-app`);
         const contentArea = appWindow.querySelector(".app-content");
 
-        fetch(`apps/${appName}.html`)
+        // Auto-detect GitHub Pages repo folder
+        const pathParts = window.location.pathname.split("/");
+        const repoName = pathParts[1] || "";
+        const base = repoName ? `/${repoName}` : "";
+
+        const url = `${base}/apps/${appName}.html`;
+
+        contentArea.innerHTML = "<p>Loading...</p>";
+
+        fetch(url)
             .then(response => {
                 if (!response.ok) throw new Error(`Failed to load ${appName}`);
                 return response.text();
@@ -68,11 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(html => {
                 contentArea.innerHTML = html;
             })
-            .catch(err => {
-                contentArea.innerHTML = `<p style="color:red;">Error loading ${appName}.</p>`;
-                console.error(err);
+            .catch(error => {
+                console.error(error);
+                contentArea.innerHTML = `
+                <p style="color:red;">Error loading <b>${appName}.html</b></p>
+                <small>Tried: ${url}</small>
+                `;
             });
-
     }
 
     function updateDateTime() {
