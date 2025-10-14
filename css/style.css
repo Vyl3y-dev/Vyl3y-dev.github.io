@@ -218,6 +218,26 @@ div#top-bar.system-information {
   overflow-y: auto;
 }
 
-.resume-app {
-  left:75px;
+.app-window#terminal-app {
+  left:50px;
+}
+
+.app-window#portfolio-app {
+  left:100px;
+}
+
+.app-window#resume-app {
+  left:150px;
+}
+
+.app-window#information-app {
+  left:200px;
+}
+
+.app-window#contact-app {
+  left:250px;
+}
+
+.app-window#files-app {
+  left:300px;
 }
