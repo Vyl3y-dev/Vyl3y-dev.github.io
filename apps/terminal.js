@@ -8,13 +8,68 @@ window.terminal_box = {
         help: () => ({
             type: 'system',
             content: `Available commands:
-- about: Opening Inf-OS...
-- contact: Opening InTouch...
+- listapps: List of current apps available on VeeOS
 - clear: Clear terminal
-- github: Open my GitHub profile (I hate frontend)
+- github: Open my GitHub profile (I don't mind frontend)
 - twitch: Open my Stream on Twitch.tv
+- youtube: Open my youtube channel
 - kofi: Support me?
+- location: Tells you where you are (virtually)
 - date: Show current date and time`
+        }),
+        listapps: () => ({
+            type: 'system',
+            content: `Available Apps:
+            - Inf-OS         | Find more information about VeeOS
+            - VeeOS Prompt   | The shell you are using right now
+            - PortfoVIEW     | A portfolio viewing application
+            - ResuVIEW       | A resume viewing application
+            - InTouch        | View various contact and information
+            - FileAdventurer | A file viewer`
+        }),
+        clear: () => {
+            terminal.window.innerHTML = '';
+            return null;
+        },
+        github: () => {
+            window.open('https://github.com/Vyl3y-dev', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening GitHub profile...'
+            };
+        },
+        twitch: () => {
+            window.open('https://www.twitch.tv/theterribleplayer', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening Twitch.tv/...'
+            };
+        },
+        youtube: () => {
+            window.open('https://www.youtube.com/@theterribleplayervy', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening Youtube.com/...'
+            };
+        },
+        kofi: () => {
+            window.open('https://ko-fi.com/vyl3ydev', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening kofi.com/...'
+            };
+        },
+        location: () => ({
+            type: 'success',
+            content: `You are here: https://vyl3y-dev.github.io/`
+        }),
+        date: () => ({
+            type: 'system',
+            content: new Date().toLocaleString()
+        }),
+        yoan: () => ({
+            type: 'success',
+            content: `I love you lots babe <3 thanks for the inspo!`
         }),
     },
 

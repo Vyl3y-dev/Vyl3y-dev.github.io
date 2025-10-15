@@ -201,6 +201,7 @@ div#top-bar.system-information {
   align-items: center;
   font-weight: bold;
   font-size: 14px;
+  left: 5px;
 }
 
 .close-btn {
@@ -228,9 +229,11 @@ div#top-bar.system-information {
   left:150px;
 }
 
-.app-window#information-app {
+.app-window#information-app .app-content{
   left:200px;
+  padding: .5rem;
 }
+
 
 .app-window#contact-app {
   left:250px;

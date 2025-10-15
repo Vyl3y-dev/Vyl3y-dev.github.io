@@ -7,6 +7,10 @@
   --cyan: #7ed1e2;
 }
 
+.terminal-line.error { color: var(--pink); }
+.terminal-line.success { color: var(--green); }
+.terminal-line.system { color: var(--cyan); }
+
 .app-content, .terminal_box {
   display: flex;
   flex-direction: column;
@@ -29,12 +33,11 @@
   display: flex;
   align-items: center;
   flex-shrink: 0; /* don't let it collapse */
-  position: relative; /* was absolute */
+  position: relative;
 }
 
 .terminal-title {
   color: var(--cyan);
-  margin-left: 1rem;
   font-family: monospace;
   font-size: 0.9rem;
 }
@@ -94,6 +97,3 @@
 }
 
 
-.terminal-line.error { color: var(--pink); }
-.terminal-line.success { color: var(--green); }
-.terminal-line.system { color: var(--cyan); }
