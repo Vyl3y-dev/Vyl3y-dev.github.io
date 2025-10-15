@@ -1,4 +1,167 @@
-<h2>About VeeOS</h2>
-<p>VeeOS v1.0 (Aurora Build)</p>
-<p>Designed and illustrated by Vyl3y-dev 💙</p>
-<p>This OS-inspired site is both an art project and a portfolio shell.</p>
+<link rel="stylesheet" href="apps/information.css">
+<div class="info-container">
+
+
+    <!-- Row 0: VeeOS img -->
+    <div class="info-row centered">
+        <div class="info-box hero">
+            <img src="/assets/images/VeeOS.png" alt="VeeOS Logo" />
+        </div>
+    </div>
+    <!-- Row 1: full width -->
+    <div class="info-row full">
+        <div class="info-box">
+            <h2>Welcome to VeeOS</h2>
+            <h3 class="middle-links"><a href="https://vyl3y-dev.github.io/">VYL3Y-DEV.GITHUB.IO</a></h3>
+            <p>This site is designed as a playful, desktop-style environment — a fusion of creativity, interactivity,
+                and development.
+                Each window acts as its own “app,” loaded dynamically just like a mini operating system running in your
+                browser.</p>
+        </div>
+    </div>
+
+    <!-- Row 2: two half-width boxes -->
+    <div class="info-row halves">
+        <div class="info-box">
+            <h4>👩‍💻 About Me</h4>
+            <p>Hi! I’m Vyley — an amateur developer, designer, and digital tinkerer who loves building interactive,
+                functional systems with personality.
+                This website is both my portfolio and sandbox, showing off the projects I’ve built, the tools I use, and
+                the ideas I’m experimenting with.</p>
+        </div>
+        <div class="info-box">
+            <h4>🧩 About VeeOS</h4>
+            <p>
+            <ul>
+                <li>Built entirely with HTML, CSS, and Vanilla JavaScript</li>
+                <li>Hosted on GitHub Pages</li>
+                <li>Styled to resemble a retro-futuristic desktop interface</li>
+                <li>Dynamically loads “apps” into draggable, resizable windows</li>
+                <li>Local testing powered by python -m http.server or npx serve</li>
+            </ul>
+            Each app lives in the /apps/ directory and loads via fetch() in script.js.</p>
+        </div>
+    </div>
+
+    <!-- Row 3: full width again -->
+    <div class="info-row full">
+        <div class="info-box" id="avaapps">
+            <h4>⚙️ Available Apps</h4>
+            <table>
+                <tr>
+                    <th>App</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>🖥️ Terminal - VeeOS Prompt</td>
+                    <td>Interactive command prompt — try typing help!</td>
+                </tr>
+                <tr>
+                    <td>📂 Files - File Adventurer</td>
+                    <td>Explorer showing stored documents, notes, or images.</td>
+                </tr>
+                <tr>
+                    <td>📜 Information - Inf-OS</td>
+                    <td>The app you’re viewing — site README and credits.</td>
+                </tr>
+                <tr>
+                    <td>💼 Portfolio - PortfoVIEW</td>
+                    <td>A look at my design, development, and creative projects.</td>
+                </tr>
+                <tr>
+                    <td>🧾 Resume - ResuVIEW</td>
+                    <td>Professional summary, skills, and contact details.</td>
+                </tr>
+                <tr>
+                    <td>☎️ Contact - <em>InTouch</em></td>
+                    <td>Quick links to GitHub, Twitch, Ko-fi, and more.</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Row 4: full width again -->
+    <div class="info-row full">
+        <div class="info-box">
+            <h3>🗣️ Discussion</h3>
+            <h4>Wanna see a particular app idea executed in the future? Join the DISCUSSION!</h4>
+            <h5 class="middle-links"><a href="https://github.com/Vyl3y-dev/Vyl3y-dev.github.io/discussions/1">Post Your
+                    App Idea</a></h5>
+        </div>
+    </div>
+
+    <!-- Row 5: three columns -->
+    <div class="info-row thirds">
+        <div class="info-box">
+            <h4>🔧 How it Works</h4>
+            <p>
+                When you open an app:
+            <ol>
+                <li>script.js fetches its .html file from /apps/.</li>
+                <li>Linked styles (.css) and scripts (.js) are dynamically loaded.</li>
+                <li>Each app runs in its own sandboxed window.</li>
+            </ol>
+            Windows can be dragged, minimized, and later made resizable.
+            </p>
+        </div>
+        <div class="info-box">
+            <h4>🎨 Design Philosophy</h4>
+            <h6><em>“Form follows function — but fun follows form.”</em></h6>
+            <p>
+                I believe tools should not only work well, but also feel delightful to use.
+                That’s why this site merges aesthetics from:
+            <ul>
+                <li>Classic operating systems</li>
+                <li>Early web apps and pixel UIs</li>
+                <li>Modern flexibility and motion</li>
+            </ul>
+            </p>
+        </div>
+        <div class="info-box">
+            <h4>📱 Tech Stack</h4>
+            <p>
+            <ul>
+                <li><em>Frontend:</em> HTML, CSS, Vanilla JS</li>
+                <li><em>Backend (local dev):</em> Python simple server</li>
+                <li><em>Version Control:</em> Git + GitHub</li>
+                <li><em>Deployment:</em> GitHub Pages</li>
+                <li><em>Planned Features:</em> Local storage for app state, draggable/resizable windows, custom boot
+                    screen.</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <!-- Row 6: full width -->
+    <div class="info-row full">
+        <div class="info-box" id="ending">
+            <h3>Credits, Plans, and Contact Info ... OH MY!</h3>
+            <h4><em>🪪 Credits</em></h4>
+            <p>
+                Concept & Design: Vyley (VYL3Y-DEV)<br>
+                Codebase: Custom, no framework<br>
+                VeeOS Images: Vyley<br>
+                Inspiration: Yoan 💖, Old GUIs, modern app dashboards, and a pinch of chaos.
+            </p>
+            <h4><em>🔮 Future Plans</em></h4>
+            <p>
+            <ul>
+                <li>Add music player or pixel art gallery</li>
+                <li>Implement window resizing and saving positions</li>
+                <li>Add local data persistence for open windows</li>
+                <li>Maybe… a mini-game hidden somewhere 👀</li>
+            </ul>
+            </p>
+            <h4><em>🤳 Quick Contact Info</em></h4>
+            <p>
+                GitHub: @Vyl3y-dev<br>
+                Twitch: @TheTerriblePlayer<br>
+                YT:     @theterribleplayervy<br>
+                Ko-fi:  ko-fi.com/vyley<br>
+                Email:  Available on request
+            </p>
+        </div>
+    </div>
+
+</div>

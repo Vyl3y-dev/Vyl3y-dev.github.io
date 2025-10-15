@@ -232,7 +232,8 @@ div#top-bar.system-information {
 
 .app-window#information-app .app-content{
   left:200px;
-  padding: .5rem;
+  background-color: #0DAAFF;
+  scrollbar-base-color: #0daaff00;
 }
 
 
@@ -243,3 +244,4 @@ div#top-bar.system-information {
 .app-window#files-app {
   left:300px;
 }
+

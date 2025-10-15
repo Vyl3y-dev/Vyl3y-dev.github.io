@@ -1,0 +1,122 @@
+.app-content,
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 4px 8px 0 8px;
+    overflow-y: scroll;      /* keep scrolling enabled */
+    scrollbar-width: none;   /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer/Edge legacy */
+    width: 100%;
+    height: 97%;
+    box-sizing: border-box;
+}
+
+.info-container::-webkit-scrollbar {
+  display: none;           /* Chrome, Safari, newer Edge */
+}
+
+/* each row */
+.info-row {
+    display: flex;
+    gap: 1rem;
+}
+
+/* row size variants */
+.info-row.full .info-box {
+    flex: 1 1 100%;
+}
+
+.info-row.halves .info-box {
+    flex: 1 1 50%;
+}
+
+.info-row.thirds .info-box {
+    flex: 1 1 33%;
+}
+
+
+/* Shared container and row styling */
+.info-row {
+    display: flex;
+    justify-content: center;
+    /* centers items horizontally */
+    gap: 1rem;
+}
+
+/* Default rows (like full/halves/thirds) already exist */
+.info-row.centered .info-box {
+    width: 60%;
+    /* makes it narrower than full width */
+    max-width: 500px;
+    /* optional fixed cap */
+    flex: none;
+}
+
+/* Styling for the hero image box */
+.info-box.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005a8a;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.637);
+}
+
+.info-box.hero img {
+    width: 112px;
+    height: 112px;
+    border: 0.25rem solid white;
+    border-radius: 0.25rem;
+}
+
+
+/* card bubble style */
+.info-box {
+    background-color: #005a8a;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.637);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-4px);
+    background: #77cfff81;
+}
+
+.info-box h2,
+h3,
+h4,
+h5, h6 {
+    text-align: center;
+}
+
+.middle-links,
+a {
+    text-align: center;
+    color: white;
+}
+
+
+table,
+th,
+td {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: white;
+    border-collapse: collapse;
+}
+
+.info-box table {
+    margin: 0 auto;
+}
