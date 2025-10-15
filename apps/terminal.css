@@ -44,7 +44,7 @@
 
 .terminal-window {
   flex: 1;
-  padding: 1rem;
+  padding: .75rem;
   overflow-y: auto;
   font-family: monospace;
   color: #fff;
