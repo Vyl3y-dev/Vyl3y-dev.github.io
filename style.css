@@ -1,0 +1,122 @@
+
+/* Terminal CSS (VEEOS Prompt) */
+
+:root {
+  --bg: #1a1e2d;
+  --green: #a5ea9b;
+  --pink: #ff61d8;
+  --blue: #569cfa;
+  --orange: #ffcc81;
+  --cyan: #7ed1e2;
+}
+
+.terminal-line.error { color: var(--pink); }
+.terminal-line.success { color: var(--green); }
+.terminal-line.system { color: var(--cyan); }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background: var(--bg);
+  display: flex;
+  place-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 2rem;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  overflow-y: auto;
+}
+
+.terminal-box {
+  background: #1d1d1d;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 800px;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.terminal-header {
+  background: #2d2d2d;
+  padding: 8px 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* don't let it collapse */
+  position: relative;
+}
+
+.terminal-title {
+  color: var(--cyan);
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.terminal-window {
+  flex: 1;
+  padding: .75rem;
+  overflow-y: auto;
+  font-family: monospace;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  background: #1d1d1d;
+}
+
+.terminal-window::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-window::-webkit-scrollbar-track {
+  background: #1d1d1d;
+}
+
+.terminal-window::-webkit-scrollbar-thumb {
+  background: #2d2d2d;
+  border-radius: 4px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  border-top: 1px solid #2d2d2d;
+}
+
+.prompt {
+  color: var(--green);
+  font-family: monospace;
+}
+
+#terminal-input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: monospace;
+  font-size: 0.9rem;
+  flex: 1;
+  outline: none;
+}
+
+.terminal-line {
+  margin-bottom: 0.5rem;
+  white-space: pre-wrap;
+}
+
