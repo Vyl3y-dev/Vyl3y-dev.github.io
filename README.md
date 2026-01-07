@@ -1,5 +1,5 @@
 # Vyl3y-dev.github.io
-VeeOS Portfolio Pages
+VeeOS Prompt
 
 Pro-tip: 
 git commit --allow-empty -m "Rebuild GitHub Pages"
