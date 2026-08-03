@@ -1,0 +1,63 @@
+{
+  "id": "example-book",
+  "callNumber": "FAN-0001",
+
+  "generalInfo": {
+    "title": "Example Book",
+    "author": "Example Author",
+    "publisher": "Example Publisher",
+    "publicationYear": 2024,
+    "pageCount": 352,
+    "genres": ["Fantasy", "Adventure"],
+    "cover": "images/covers/example-book.jpg"
+  },
+
+  "readingInfo": {
+    "status": "Finished",
+    "format": "Paperback",
+    "startDate": "2026-07-20",
+    "finishDate": "2026-08-01"
+  },
+
+  "rubric": {
+    "categories": [
+      {
+        "name": "Plot",
+        "score": 17,
+        "maximum": 20
+      },
+      {
+        "name": "Characters",
+        "score": 19,
+        "maximum": 20
+      }
+    ],
+    "total": 84,
+    "summary": "Strong characters carried an uneven plot."
+  },
+
+  "personalImpression": {
+    "icon": "🥹",
+    "feeling": "Emotionally invested",
+    "summary": "It hurt my feelings, respectfully."
+  },
+
+  "funFacts": {
+    "oneSentence": "A terrible decision develops increasingly terrible consequences.",
+    "favoriteCharacter": "Example Character",
+    "leastFavoriteCharacter": "That other one",
+    "wouldReread": true
+  },
+
+  "reviewSections": [
+    {
+      "heading": "Overall Thoughts",
+      "paragraphs": [
+        "This is a temporary review paragraph used to test the page."
+      ]
+    }
+  ],
+
+  "annotations": [],
+  "favoriteQuotes": []
+}

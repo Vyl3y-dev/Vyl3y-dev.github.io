@@ -1,0 +1,143 @@
+.bookcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+
+    background-color: #d8c5a5;
+    border: 18px solid #5c3927;
+
+    box-shadow:
+        inset 0 0 30px rgb(50 30 20 / 25%),
+        0 8px 20px rgb(0 0 0 / 20%);
+}
+
+.shelf {
+    margin-bottom: 3rem;
+}
+
+.shelf-books {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
+
+    min-height: 310px;
+    padding: 1rem 1.5rem 0;
+
+    align-items: end;
+}
+
+.shelf-plank {
+    position: relative;
+    height: 26px;
+
+    background: linear-gradient(
+        to bottom,
+        #8f5e3c 0%,
+        #704329 55%,
+        #4b2b1b 100%
+    );
+
+    border-top: 4px solid #a97750;
+    border-bottom: 4px solid #3b2116;
+
+    box-shadow:
+        0 10px 12px rgb(0 0 0 / 25%),
+        inset 0 2px 3px rgb(255 255 255 / 15%);
+}
+
+.shelf-plank::after {
+    content: "";
+
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    bottom: -12px;
+
+    height: 12px;
+
+    background-color: #56321f;
+    border-radius: 0 0 4px 4px;
+}
+
+.book-card {
+    width: 100%;
+    max-width: 170px;
+    justify-self: center;
+
+    padding: 0.75rem;
+
+    background-color: #f5efe4;
+    border-radius: 4px 4px 2px 2px;
+
+    box-shadow:
+        4px 5px 8px rgb(0 0 0 / 25%),
+        inset -3px 0 4px rgb(0 0 0 / 8%);
+
+    text-align: center;
+
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.book-card:hover,
+.book-card:focus-within {
+    transform: translateY(-10px) rotate(-1deg);
+
+    box-shadow:
+        7px 12px 14px rgb(0 0 0 / 28%),
+        inset -3px 0 4px rgb(0 0 0 / 8%);
+}
+
+.book-card img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+
+    margin-bottom: 0.75rem;
+
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 20%);
+}
+
+.book-card h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.book-card p {
+    margin: 0.3rem 0 0;
+    font-size: 0.875rem;
+}
+
+.book-score {
+    font-weight: bold;
+}
+
+@media (max-width: 950px) {
+    .shelf-books {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 750px) {
+    .shelf-books {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .bookcase {
+        padding: 2rem 1rem;
+        border-width: 10px;
+    }
+
+    .shelf-books {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        min-height: 280px;
+        padding-inline: 0.5rem;
+    }
+}

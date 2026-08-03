@@ -10,14 +10,18 @@ const terminal = {
         help: () => ({
             type: 'system',
             content: `Available commands:
-- listapps: List of current apps available on VeeOS
-- clear: Clear terminal
-- github: Open my GitHub profile (I don't mind frontend)
-- twitch: Open my Stream on Twitch.tv
-- youtube: Open my youtube channel
-- kofi: Support me?
-- location: Tells you where you are (virtually)
-- date: Show current date and time`
+    - clear: Clear terminal
+    - books: Fresh Take - Book Reports webpage
+    - portfolio: My Portfolio (better representation vs my resume) [COMING SOON]
+    - games: Games I have made [COMING SOON]
+    - apps: Apps I have made [COMING SOON]
+    - github: Open my GitHub profile (I don't mind frontend)
+    - twitch: Open my Stream on Twitch.tv
+    - youtube: Open my Youtube channel
+    - kofi: Support me?
+    - inspo: Check out @Vivi4n's website (that's where I got the inspo/"stole" some of the code)
+    - location: Tells you where you are (virtually)
+    - date: Show current date and time`
         }),
         listapps: () => ({
             type: 'system',
@@ -32,6 +36,31 @@ const terminal = {
         clear: () => {
             terminal.window.innerHTML = '';
             return null;
+        },
+        books: () => {
+            window.open('books/index.html', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening GitHub profile...'
+            };
+        },
+        portfolio: () => {
+            return {
+                type: 'success',
+                content: 'COMING SOON'
+            };
+        },
+        apps: () => {
+            return {
+                type: 'success',
+                content: 'COMING SOON'
+            };
+        },
+        games: () => {
+            return {
+                type: 'success',
+                content: 'COMING SOON'
+            };
         },
         github: () => {
             window.open('https://github.com/Vyl3y-dev', '_blank');
@@ -66,7 +95,7 @@ const terminal = {
             content: `You are here: https://vyl3y-dev.github.io/`
         }),
         date: () => ({
-            type: 'system',
+            type: 'success',
             content: new Date().toLocaleString()
         }),
         yoan: () => ({

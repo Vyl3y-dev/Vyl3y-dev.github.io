@@ -1,0 +1,15 @@
+[
+  {
+    "id": "example-book",
+    "callNumber": "FAN-0001",
+    "title": "Example Book",
+    "author": "Example Author",
+    "cover": "images/covers/example-book.jpg",
+    "genres": ["Fantasy", "Adventure"],
+    "score": 84,
+    "impressionIcon": "🥹",
+    "impression": "Emotionally rude, but worth it",
+    "finishedDate": "2026-08-01",
+    "status": "Finished"
+  }
+]
