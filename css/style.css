@@ -1,0 +1,246 @@
+/* style.css - ONLY THE RELEVANT UPDATES for .desktop-icon grid layout */
+
+body {
+  margin: 0px;
+}
+
+.system-container {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: auto;
+  height: 100vh;
+}
+
+/* Header and related properties */
+#header {
+  background-color: black;
+  flex: 5%;
+}
+
+.system-information {
+  display: flex;
+  flex-direction: row;
+  margin-left: 45%;
+}
+
+.system-information > div {
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
+}
+
+#top-bar > div {
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+p.info {
+  margin: 0px;
+}
+
+div#top-bar.system-information {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#datetime {
+  margin-right: 2%;
+  width: fit-content;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#notifications {
+  margin-left: 55%;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#alerts {
+  margin-left: 2%;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#volume {
+  margin-left: 2%;
+  padding:  5px;
+  border: 1px solid transparent;
+}
+
+#battery {
+  margin-left: 2%;
+  margin-right: auto;
+  padding: 5px;
+  border: 1px solid transparent;
+}
+
+#datetime:hover, #notifications:hover, #alerts:hover, #volume:hover, #battery:hover {
+  border: 1px solid rgb(65, 65, 65);
+  background-color: rgb(238, 234, 234);
+  color: black;
+  transform: scale(1.05)
+}
+
+#datetime {
+  white-space: nowrap;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+/* Main Desktop Apps and related properties */
+
+#main-desktop {
+  background-color: cyan;
+  flex: 85%;
+  display: grid;
+  grid-template-rows: repeat(3, 150px);
+  grid-template-columns: repeat(3, 150px);
+  gap: 24px;
+  padding: 40px 20px 20px;
+  justify-items: center;
+  align-items: start;
+}
+
+.desktop-icon {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+ 
+}
+
+
+
+.desktop-icon:hover {
+  transform: scale(1.05);
+}
+
+
+.desktop-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or cover if you want full bleed */
+  display: block;
+  
+}
+
+.desktop-icon h3 {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.desktop-icon span {
+  font-size: 18px;
+  color: black;
+}
+
+/* Footer and related properties */
+
+#footer {
+  background-color: black;
+  flex: 10%;
+}
+
+#bottom-bar {
+  display: flex;
+  justify-content: center; /* Center the wrapper */
+  align-items: center;
+  height: 100%;
+  background-color: black;
+}
+
+#taskbar-icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.taskbar-app {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+
+/* App Window and related properties */
+.app-window {
+  position: absolute;
+  top: 75px;
+  left: 100px;
+  width: 1000px;
+  height: 700px;
+  background-color: white;
+  border: 2px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: none;
+  overflow: hidden;
+}
+
+.title-bar {
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 14px;
+  left: 5px;
+  padding-left: 12px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.app-content {
+  height: calc(100% - 40px); /* subtract title bar height */
+  overflow-y: auto;
+}
+
+.app-window#terminal-app {
+  left:50px;
+}
+
+.app-window#portfolio-app {
+  left:100px;
+}
+
+.app-window#resume-app {
+  left:150px;
+}
+
+.app-window#information-app .app-content{
+  left:200px;
+  background-color: #0DAAFF;
+}
+
+
+.app-window#contact-app {
+  left:250px;
+}
+
+.app-window#files-app {
+  left:300px;
+}
+

@@ -1,10 +1,135 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+
+.top-area {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    grid-template-areas:
+        "portrait title   title   artwork"
+        "buttons  buttons search  search";
+
+    gap: 1rem 2rem;
+}
+
+.portrait {
+    grid-area: portrait;
+}
+
+.portrait img {
+    width: 128px;
+    height: 128px;
+}
+
+.site-title {
+    grid-area: title;
+}
+
+.wall-art {
+    grid-area: artwork;
+}
+
+.top-buttons {
+    grid-area: buttons;
+}
+
+.search {
+    grid-area: search;
+}
+
+.top-area > * {
+    outline: 2px dashed red;
+}
+
+.announcement {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+
+.room {
+    position: relative;
+    isolation: isolate;
+    
+}
+
+.room::before {
+    content: "";
+    position: absolute;
+
+    inset: 0px;
+    
+    background-color: #03a0c7;
+    background-image: url("../images/pansy_bloom_vector.png");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+
+    /* filter: blur(2px); */
+
+    opacity: 0.60;
+
+    z-index: -1;
+}
+
+.room-content {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(150px, 0.7fr)
+        minmax(0, 850px)
+        minmax(220px, 0.8fr);
+
+    grid-template-areas:
+        "left bookcase side";
+
+    gap: 2rem;
+    align-items: start;
+
+    border-style: solid;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-right-width: 27px;
+    border-left-width: 30px;
+    border-color:  #027896;
+    
+    padding: 3rem 5vw 5rem;
+
+}
+
+.crown-molding {
+
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 60px 40px 0px 40px;
+    border-image-source: url(../images/crown_molding.png);
+    border-image-slice: 60 40 0 40;
+    border-image-repeat: stretch;
+}
+
+.left-wall {
+    grid-area: left;
+}
+
 .bookcase {
+
+    grid-area: bookcase;
+
     --frame-size: 22px;
     --beam-overhang: 6px;
 
     position: relative;
     padding: var(--frame-size);
-    max-width: 1200px;
+    width: 100%;
+    min-width: 0;
+    max-width: 850px;
     margin: 0 auto;
 
     /* Creates room for the four beams */
@@ -272,4 +397,23 @@
         min-height: 280px;
         padding-inline: 0.5rem;
     }
+}
+
+.side-panel {
+    grid-area: side;
+}
+
+.base-board {
+
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 60px 40px 0px 40px;
+    border-image-source: url(../images/base_board.png);
+    border-image-slice: 60 40 0 40;
+    border-image-repeat: stretch;
+}
+
+.bottom-area {
+    border: 2px dashed red;
+    height: 30px
 }
