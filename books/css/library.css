@@ -14,19 +14,45 @@ body {
         "buttons  buttons search  search";
 
     gap: 1rem 2rem;
+
+    /* background-color: green; */
+    background-image: url(../images/booksite_background_option6_duotoned-blurred.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 .portrait {
     grid-area: portrait;
+    width: auto;
 }
 
 .portrait img {
     width: 128px;
     height: 128px;
+    display: block;
+    margin: 100% auto 0 0;
+    border: 6px solid #1a1e2d;
+    background-color: rgba(255, 255, 255, 0.492);
+    border-radius: 100px;
 }
 
 .site-title {
     grid-area: title;
+    width: 729px;
+    height: 495px;
+}
+
+.site-title img {
+     width: 75%;
+    height: 75%;
+    display: block;
+    margin: 5% auto 0 auto;
+    border: 10px 5px solid #6a4600;
+    border-radius: 10px;
+    box-shadow: 0px 10px 5px 5px #1a1e2d;
+    
 }
 
 .wall-art {
