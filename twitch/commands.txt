@@ -1,0 +1,34 @@
+List of available commands 😺
+Feel free to try them out
+More to be added soon!~
+'!' goes before every command
+Example: !song - shows current song
+!sup - HI ✋ lemme know you're here
+!luxhi @user - greet someone
+!itsvy - greet Vy (streamer)
+!itsviv - greet Viv (@Viv4n)
+!ping - pong 🏓
+!lurk - (marks you as a lurker)
+!hug - give someone a huggy
+!8ball - ask a question get an answer
+!roll - roll a dice of your choice 2-20
+!socials - linktree (the image in the first panel)
+!quote - displays a random quote
+!miss - logs # of missed cannons
+!fifty - logs # of times last hit nexus
+!first - claim to be the 1st viewer
+!second - claim to be the 2nd viewer
+!third - claim to be the 3rd viewer
+!song - displays the song playing
+!playlist - links the current playlist
+!queue - add a song to the spotify queue [IN DEV]
+!followage - returns how long you've been following Vy
+!lc - list commands
+!so - shoutout to a fellow streamer 🎉 [IN DEV]
+!lastgame - League previous match history (Ranked) [IN DEV]
+!matches - Summary of recent league matches (Ranked) [IN DEV]
+!rank - Check out my horrible League rank on my main account 😅
+
+
+
+

@@ -1,127 +1,260 @@
- body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("images/BannerBackground.png") center / cover no-repeat;
-    opacity: 0.45;
-    z-index: -2;
-}
+/* ---------- Base ---------- */
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    background: #111318;
-}
-
-
-.info-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 4px 8px 0 8px;
-    overflow-y: scroll;      /* keep scrolling enabled */
-    scrollbar-width: none;   /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer/Edge legacy */
-    width: 100%;
-    height: 97%;
+* {
     box-sizing: border-box;
 }
 
-.info-container::-webkit-scrollbar {
-  display: none;           /* Chrome, Safari, newer Edge */
+html,
+body {
+    margin: 0;
+    min-height: 100%;
 }
 
-/* each row */
-.info-row {
-    display: flex;
-    gap: 1rem;
-}
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 
-/* row size variants */
-.info-row.full .info-box {
-    flex: 1 1 100%;
-}
-
-.info-row.halves .info-box {
-    flex: 1 1 50%;
-}
-
-.info-row.thirds .info-box {
-    flex: 1 1 33%;
-}
-
-
-/* Shared container and row styling */
-.info-row {
     display: flex;
     justify-content: center;
-    /* centers items horizontally */
-    gap: 1rem;
-}
-
-/* Default rows (like full/halves/thirds) already exist */
-.info-row.centered .info-box {
-    width: 60%;
-    /* makes it narrower than full width */
-    max-width: 500px;
-    /* optional fixed cap */
-    flex: none;
-}
-
-/* Styling for the hero image box */
-.info-box.hero {
-    display: flex;
     align-items: center;
+
+    padding: 3rem 1rem;
+
+    background: #0f2164;
+    color: #ffffff;
+}
+
+
+/* ---------- Background Layer ---------- */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        url("images/Vyley-2.png")
+        center / cover
+        no-repeat;
+
+    opacity: 0.75;
+    /* filter: blur(2px); */
+
+    transform: scale(1.04);
+
+    z-index: -2;
+}
+
+
+/* Optional dark wash so bright backgrounds never overpower the UI */
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: rgba(8, 14, 102, 0.18);
+
+    z-index: -1;
+}
+
+
+/* ---------- Main Glass Shell ---------- */
+
+.bot-shell {
+    position: relative;
+    width: min(950px, 94vw);
+
+    background: rgba(34, 28, 44, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    overflow: visible;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+}
+
+.shell-mascot {
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.shell-mascot-top {
+    width: 180px;
+    top: -115px;
+    right: 30px;
+}
+
+.shell-mascot-bottom {
+    width: 190px;
+    bottom: -75px;
+    left: -100px;
+}
+
+/* ---------- Header ---------- */
+
+.bot-header {
+    text-align: center;
+
+    padding: 2.5rem 2rem 2rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bot-header img {
+    width: 110px;
+    height: 110px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.18);
+
+    margin-bottom: 1rem;
+}
+
+.bot-header h1 {
+    margin: 0 0 1rem 0;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    letter-spacing: 0.04em;
+}
+
+.bot-header p {
+    margin: 1rem 0 0 0;
+
+    /* opacity: 0.7; */
+
+    font-size: 0.95rem;
+}
+
+.bot-header button {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(60, 25, 216, 0.06);
+
+    color: inherit;
+
+    padding: 0.7rem 1.2rem;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.bot-header button:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.bot-header button:active {
+    transform: translateY(0);
+}
+
+.twitch-button {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(60, 25, 216, 0.06);
+    color: inherit;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+/* ---------- Navigation ---------- */
+
+.bot-nav {
+    display: flex;
     justify-content: center;
-    background-color: #005a8a;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    border-radius: 20px;
+    flex-wrap: wrap;
+
+    gap: 0.75rem;
+
+    padding: 1rem 1.5rem;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    background: rgba(0, 14, 204, 0.05);
+}
+
+.bot-nav button {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(60, 25, 216, 0.06);
+
+    color: inherit;
+
+    padding: 0.7rem 1.2rem;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.bot-nav button:hover {
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    transform: translateY(-2px);
+}
+
+.bot-nav button:active {
+    transform: translateY(0);
+}
+
+
+
+/* ---------- Main Content ---------- */
+
+.bot-content {
     padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.637);
 }
 
-.info-box.hero img {
-    width: 112px;
-    height: 112px;
-    border: 0.25rem solid white;
-    border-radius: 0.25rem;
+.bot-content h2 {
+    margin-top: 0;
+
+    font-size: 1.6rem;
 }
 
-
-/* card bubble style */
-.info-box {
-    background-color: #005a8a;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.637);
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    transition: transform 0.2s ease, background 0.2s ease;
+.bot-content p {
+    line-height: 1.7;
+    
+    color: rgb(255, 255, 255);
 }
 
-.info-box:hover {
-    transform: translateY(-4px);
-    background: #77cfff81;
+.tab-content {
+    display: none;
 }
 
-.info-box h2,
-h3,
-h4,
-h5, h6 {
-    text-align: center;
+.tab-content.active {
+    display: block;
 }
-
-.middle-links,
-a {
-    text-align: center;
-    color: white;
-}
-
 
 table,
 th,
@@ -130,8 +263,128 @@ td {
     border-style: solid;
     border-color: white;
     border-collapse: collapse;
+    text-align: left;
+}
+/* 
+td {
+    background-color: #ffffff27
+} */
+
+th,
+td {
+    padding: 0.65rem 0.75rem;
 }
 
-.info-box table {
-    margin: 0 auto;
+
+td code {
+    font-family: Consolas, "Courier New", monospace;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 0.15rem 0.4rem;
+    border-radius: 5px;
+}
+
+tr:hover td {
+    background-color: #047a9e;
+}
+.left-text {
+    text-align: left;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.dev-screenshot {
+    width: 100%;
+    max-width: 884px;
+    height: auto;
+}
+/* .right-text {
+    text-align: right;
+} */
+
+
+/* ---------- Optional Inner Panels ---------- */
+
+.info-panel {
+    padding: 1.25rem;
+
+    margin-top: 1rem;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+    color: inherit;
+
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 1rem 0.75rem;
+
+        align-items: flex-start;
+    }
+
+    .bot-shell {
+        width: 100%;
+
+        border-radius: 18px;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .shell-mascot-top {
+        width: 120px;
+        top: -75px;
+        right: 10px;
+    }
+
+    .shell-mascot-bottom {
+        width: 125px;
+        bottom: -75px;
+        left: 8px;
+    }
+
+    .bot-header {
+        padding: 2rem 1.25rem 1.5rem;
+    }
+
+    .bot-header img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .bot-nav {
+        gap: 0.5rem;
+
+        padding: 0.8rem;
+    }
+
+    .bot-nav button {
+        flex: 1 1 40%;
+
+        padding: 0.65rem 0.8rem;
+    }
+
+    .bot-content {
+        padding: 1.4rem;
+    }
 }

@@ -11,18 +11,20 @@ const terminal = {
             type: 'system',
             content: `Available commands:
     - clear: Clear terminal
-    - books: Fresh Take - Book Reports webpage
+    - books: Fresh Take - Book Reports webpage [COMING SOON]
     - portfolio: My Portfolio (better representation vs my resume) [COMING SOON]
     - games: Games I have made [COMING SOON]
     - apps: Apps I have made [COMING SOON]
     - github: Open my GitHub profile (I don't mind frontend)
     - twitch: Open my Stream on Twitch.tv
+    - vyleybot: Open InfOS on VyleyBot - My custom made twitch bot for my stream!
     - youtube: Open my Youtube channel
-    - kofi: Support me?
+    - kofi: Like what I do? Support me!
     - inspo: Check out @Vivi4n's website (that's where I got the inspo/"stole" some of the code)
     - location: Tells you where you are (virtually)
     - date: Show current date and time`
         }),
+        // Obsolete command
         listapps: () => ({
             type: 'system',
             content: `Available Apps:
@@ -41,7 +43,7 @@ const terminal = {
             window.open('books/index.html', '_blank');
             return {
                 type: 'system',
-                content: 'Opening GitHub profile...'
+                content: 'Opening Fresh Take - A book review site...'
             };
         },
         portfolio: () => {
@@ -76,10 +78,17 @@ const terminal = {
                 content: 'Opening Twitch.tv/...'
             };
         },
+        vyleybot: () => {
+            window.open('twitch/index.html', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening InfOS:VyleyBot...'
+            };
+        },
         youtube: () => {
             window.open('https://www.youtube.com/@theterribleplayervy', '_blank');
             return {
-                type: 'system',
+                type: 'success',
                 content: 'Opening Youtube.com/...'
             };
         },
