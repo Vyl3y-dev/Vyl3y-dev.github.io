@@ -16,6 +16,7 @@ const terminal = {
     - games: Games I have made [COMING SOON]
     - apps: Apps I have made [COMING SOON]
     - github: Open my GitHub profile (I don't mind frontend)
+    - rct3: Open InfOS on my RCT3 Patch that I built 
     - twitch: Open my Stream on Twitch.tv
     - vyleybot: Open InfOS on VyleyBot - My custom made twitch bot for my stream!
     - youtube: Open my Youtube channel
@@ -69,6 +70,13 @@ const terminal = {
             return {
                 type: 'system',
                 content: 'Opening GitHub profile...'
+            };
+        },
+        rct3: () => {
+            window.open('RCT3-patch-info/index.html', '_blank');
+            return {
+                type: 'system',
+                content: 'Opening InfOS:RCT3 Patch Info page'
             };
         },
         twitch: () => {

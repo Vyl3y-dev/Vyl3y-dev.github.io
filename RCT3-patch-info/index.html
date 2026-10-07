@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VeeOS@InfOS: RCT3 Patch Info</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="hero-image" aria-label="RollerCoaster Tycoon 3 Compatibility Helper"></header>
+
+        <main>
+            <section class="intro">
+            <span class="eyebrow">Unofficial community utility · Windows</span><br>
+            <img
+                src="images/RCT3HelperIcon.png"
+                alt="RCT3 Compatibility Helper icon"
+                class="app-icon"
+            >
+            <h1>🎢 RCT3 Compatibility Helper</h1>
+            <p class="lede">A small utility for <em>RollerCoaster Tycoon 3: Complete Edition</em> players affected by compatibility problems introduced by the March 2026 Steam update.</p>
+            <div class="ext-butts">
+                <a class="button primary" href="https://github.com/Vyl3y-dev/rct3-rollback-helper/releases" target="_blank">Download Latest Release</a>
+                <a class="button secondary" href="https://github.com/Vyl3y-dev/rct3-rollback-helper" target="_blank">View on GitHub</a>
+            </div>
+            </section>
+
+            <section class="card">
+            <h2>What does it do?</h2>
+            <p>RCT3 Compatibility Helper detects your Steam installation and checks which version of <code>RCT3.exe</code> is installed.</p>
+            <p>If an affected version is detected, the helper can:</p>
+            <ul class="check-list">
+                <li>Retrieve a known-working version through your own Steam account</li>
+                <li>Verify the downloaded executable before using it</li>
+                <li>Back up your current executable</li>
+                <li>Install the compatible version</li>
+                <li>Restore the original version whenever you want</li>
+            </ul>
+            </section>
+
+            <section class="card">
+            <h2>How to use it</h2>
+            <ol class="steps">
+                <li><span>Download RCT3 Compatibility Helper.</span></li>
+                <li><span>Open the application.</span></li>
+                <li><span>Click <strong>Install Compatibility Fix</strong>.</span></li>
+                <li><span>A Command Prompt window will appear displaying a Steam QR code.</span></li>
+                <li><span>Scan the code using the Steam mobile app.</span></li>
+                <li><span>Let the helper verify, back up, and install the compatible executable.</span></li>
+            </ol>
+            <p class="aside">That's all she wrote. 🎢</p>
+            </section>
+
+            <div class="two-column">
+            <section class="card">
+                <h2>Why does Steam ask me to sign in?</h2>
+                <p>The older RCT3 executable is retrieved directly through Steam using DepotDownloader. The helper does not include or redistribute RCT3 game files.</p>
+                <p>Steam authentication is handled separately by DepotDownloader. RCT3 Compatibility Helper does not receive or store your Steam username, password, or Steam Guard credentials.</p>
+            </section>
+
+            <section class="card">
+                <h2>Is this safe?</h2>
+                <ul class="check-list">
+                <li>Known SHA-256 hashes are checked before the game is modified.</li>
+                <li>Your current executable is backed up before replacement.</li>
+                <li>Unknown executables are rejected rather than overwritten.</li>
+                <li>Your original executable can be restored from the application.</li>
+                </ul>
+            </section>
+            </div>
+
+            <section class="card problem">
+            <h2>What problem does this address?</h2>
+            <p>The March 2026 Steam build can launch and play normally, but affected installations may crash when saving a Peep group from the Peep Designer. Testing found that replacing only the affected executable with the verified earlier version restores Peep saving while retaining the current game resources.</p>
+            <p class="muted">For hashes, testing methodology, source code, and the full investigation, see the technical project documentation.</p>
+            <div class="ext-butts">
+                <a class="button secondary" href="https://github.com/Vyl3y-dev/rct3-rollback-helper/blob/main/README.md" target="_blank">Read the Technical Documentation on GitHub</a>
+            </div>
+            </section>
+
+            <aside class="notice">
+            <strong>⚠️ Unofficial community tool</strong>
+            <p>RCT3 Compatibility Helper is an unofficial community project and is not affiliated with Frontier Developments, Atari, Valve, Steam, or SteamRE/DepotDownloader.</p>
+            </aside>
+
+            <aside class="supp-me">
+            <strong>😸 Did this tool help?</strong>
+            <p>If yes, consider buying me a ☕<a href="https://ko-fi.com/vyl3ydev" target="_blank">Ko-fi</a> to support me and other projects in the future!</p>
+            </aside>
+        </main>
+
+        <section class="community-section">
+            <div class="section-heading">
+                <p class="eyebrow">COMMUNITY</p>
+                <h2>Questions, Results & Roller Coaster Shenanigans</h2>
+                <p>
+                    Tried the helper? Have a question, test result, or something weird
+                    happen with your installation? Leave a comment below.
+                </p>
+            </div>
+
+            <div class="comments">
+                <script src="https://giscus.app/client.js"
+                        data-repo="Vyl3y-dev/Vyl3y-dev.github.io"
+                        data-repo-id="R_kgDOPRh5eA"
+                        data-category="Comments"
+                        data-category-id="DIC_kwDOPRh5eM4DHOEI"
+                        data-mapping="pathname"
+                        data-strict="0"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="top"
+                        data-theme="dark"
+                        data-lang="en"
+                        data-loading="lazy"
+                        crossorigin="anonymous"
+                        async>
+                </script>
+            </div>
+        </section>
+
+        <footer>
+            <span>RCT3 Compatibility Helper · <a href="https://vyl3y-dev.github.io/" target="_blank">VeeOS</a> · Vyl3y-dev</span>
+            <span class="footer-note">Built for the RCT3 community 🎢</span>
+        </footer>
+    </body>
+</html>
