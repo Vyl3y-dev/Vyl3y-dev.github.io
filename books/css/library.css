@@ -7,13 +7,14 @@ body {
 .top-area {
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: 1fr 2fr 2fr 1fr;
 
     grid-template-areas:
         "portrait title   title   artwork"
         "buttons  buttons search  search";
 
     gap: 1rem 2rem;
+    grid-template-rows: 200px 80px;
 
     /* background-color: green; */
     background-image: url(../images/booksite_background_option6_duotoned-blurred.png);
@@ -25,14 +26,16 @@ body {
 
 .portrait {
     grid-area: portrait;
-    width: auto;
+
+    display: flex;
+    align-items: flex-end;
+    place-self: center;
 }
 
 .portrait img {
     width: 128px;
     height: 128px;
     display: block;
-    margin: 100% auto 0 0;
     border: 6px solid #1a1e2d;
     background-color: rgba(255, 255, 255, 0.492);
     border-radius: 100px;
@@ -40,11 +43,54 @@ body {
 
 .site-title {
     grid-area: title;
-    width: 729px;
-    height: 495px;
+    margin-top: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem 3rem;
+
+    background: linear-gradient(
+        145deg,
+        #d99b70 0%,
+        #c88960 55%,
+        #b77750 100%
+    );
+
+    border: 5px solid #633b2b;
+    border-radius: 28px;
+
+    box-shadow:
+        0 12px 25px rgb(0 0 0 / 35%),
+        inset 0 3px 5px rgb(255 255 255 / 25%),
+        inset 0 -5px 8px rgb(60 30 15 / 15%);
 }
 
-.site-title img {
+.site-title h1 {
+    margin: 0;
+
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+
+    color: #fff4e6;
+
+    text-shadow: 1px 2px 2px rgb(60 30 15 / 30%);
+}
+
+.site-title h2 {
+    margin: 1rem 0 0;
+
+    font-size: clamp(0.95rem, 1.5vw, 1.3rem);
+    font-weight: 400;
+    font-style: italic;
+
+    color: #fff0dc;
+}
+
+/* .site-title img {
      width: 75%;
     height: 75%;
     display: block;
@@ -53,7 +99,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 10px 5px 5px #1a1e2d;
     
-}
+} */
 
 .wall-art {
     grid-area: artwork;
@@ -77,6 +123,8 @@ body {
 
     padding: 0.75rem 1rem;
     text-align: center;
+
+    outline: 2px dashed red;
 }
 
 
@@ -183,6 +231,8 @@ body {
         #3e2116 100%
     );
     border-radius: 4px 4px 8px 8px;
+
+    filter: drop-shadow(8px 12px 10px rgb(0 0 0 / 22%));
 }
 
 .frame-top::after {
@@ -211,6 +261,7 @@ body {
         #3e2116 100%
     );
     border-radius: 8px 8px 4px 4px;
+    filter: drop-shadow(8px 12px 10px rgb(0 0 0 / 22%));
 }
 
 .frame-bottom::after {
